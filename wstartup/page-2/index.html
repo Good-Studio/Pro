@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -157,11 +157,40 @@ a.button-link {
   </header>
   <nav class="sb-page-nav">
     <a href="index.html">Страница 1</a>
-    <a href="page-2/">Страница 2</a>
+    <a href="page-2/">site2</a>
     <a href="page-3/">Страница 3</a>
   </nav>
   <main>
-    <div class="sb-page-title">Страница 2</div>
+    <div class="sb-page-title">site2</div>
+    <div class="" style="text-align:center;color:#e5e7eb;font-family:system-ui,-apple-system,sans-serif;font-size:16px;"><h2>Заголовок</h2></div>
+    <div class="" style="text-align:center;color:#e5e7eb;font-family:system-ui,-apple-system,sans-serif;font-size:16px;border-radius:12px;box-shadow:none;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.65rem;">
+        <blockquote style="margin:0;padding:.7rem .8rem;border:1px solid rgba(148,163,184,.35);border-radius:12px;background:rgba(15,23,42,.25);">
+          <div style="font-weight:600;margin-bottom:.35rem;">Anna</div>
+          <div>"Great service and fast launch."</div>
+        </blockquote>
+        <blockquote style="margin:0;padding:.7rem .8rem;border:1px solid rgba(148,163,184,.35);border-radius:12px;background:rgba(15,23,42,.25);">
+          <div style="font-weight:600;margin-bottom:.35rem;">John</div>
+          <div>"Simple builder and clean result."</div>
+        </blockquote>
+      </div>
+    </div>
+    <div style="text-align:center;"><a href="https://good-studio.github.io/Pro/wstartup/site1" target="_blank" rel="noopener noreferrer" class="button-link " style="padding:8px 16px;background:#2563eb;color:#fff;border-radius:12px;box-shadow:none;font-family:system-ui,-apple-system,sans-serif;font-size:16px;width:100%;max-width:100%;display:inline-flex;justify-content:center;">1</a></div>
+    <div class="" style="text-align:center;color:#e5e7eb;font-family:system-ui,-apple-system,sans-serif;font-size:16px;">
+      <div style="display:flex;gap:.55rem;flex-wrap:wrap;">
+        <a href="https://instagram.com/" title="Instagram" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:999px;background:rgba(15,23,42,.65);border:1px solid rgba(148,163,184,.35);box-shadow:none;">
+          <img src="https://cdn.simpleicons.org/instagram/ffffff" alt="Instagram" style="width:21px;height:21px;">
+        </a>
+        <a href="https://t.me/" title="Telegram" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:999px;background:rgba(15,23,42,.65);border:1px solid rgba(148,163,184,.35);box-shadow:none;">
+          <img src="https://cdn.simpleicons.org/telegram/ffffff" alt="Telegram" style="width:21px;height:21px;">
+        </a>
+        <a href="https://youtube.com/" title="YouTube" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:999px;background:rgba(15,23,42,.65);border:1px solid rgba(148,163,184,.35);box-shadow:none;">
+          <img src="https://cdn.simpleicons.org/youtube/ffffff" alt="YouTube" style="width:21px;height:21px;">
+        </a>
+        <a href="https://s" target="_blank" rel="noopener noreferrer" style="color:#e5e7eb;text-decoration:underline;">Whatsapp</a>
+      </div>
+    </div>
+    <div style="text-align:center;"><a href="https://good-studio.github.io/Pro/wstartup/" target="_blank" rel="noopener noreferrer" class="button-link " style="padding:8px 16px;background:#2563eb;color:#fff;border-radius:12px;box-shadow:none;font-family:system-ui,-apple-system,sans-serif;font-size:16px;width:100%;max-width:100%;display:inline-flex;justify-content:center;">s</a></div>
   </main>
   <footer class="" style="text-align:center;color:#e5e7eb"><div>Book a demo in one click</div></footer>
   <script>
@@ -192,7 +221,7 @@ a.button-link {
         var success = card ? card.querySelector('.sb-contact-success') : null;
         var error = card ? card.querySelector('.sb-contact-error') : null;
         if (success) success.hidden = true;
-        if (error) { error.hidden = true; error.textContent = 'Error. Try again later.'; }
+        if (error) { error.hidden = true; error.textContent = 'Ошибка. Попробуйте позже.'; }
         var endpoints = ['https://sitebuilding.onrender.com/api/messages', 'https://sitebuilding.onrender.com/api/messages', '/api/messages'];
         endpoints = endpoints.filter(function(v, i, arr) { return arr.indexOf(v) === i; });
         var payload = {
@@ -206,7 +235,7 @@ a.button-link {
         };
         if (Number((payload.captcha || '').trim()) !== expectedCaptcha) {
           if (error) {
-            error.textContent = 'Captcha answer is incorrect. Please try again.';
+            error.textContent = 'Неверный ответ проверки. Попробуйте ещё раз.';
             error.hidden = false;
           }
           return;
@@ -216,7 +245,7 @@ a.button-link {
         var recentTs = parseInt(localStorage.getItem(recentKey) || '0', 10);
         if (recentTs > 0 && (Date.now() - recentTs) < 120000) {
           if (error) {
-            error.textContent = 'This device already sent a message. Try again later.';
+            error.textContent = 'Это устройство уже отправляло сообщение. Попробуйте позже.';
             error.hidden = false;
           }
           return;
@@ -255,14 +284,14 @@ a.button-link {
             try { problem = await resp.json(); } catch (_) { }
             var reason = problem && problem.reason ? problem.reason : '';
             if (error) {
-              if (reason === 'invalid_email') error.textContent = 'Invalid email format.';
-              else if (reason === 'invalid_name') error.textContent = 'Invalid name.';
-              else if (reason === 'invalid_message' || reason === 'invalid_content') error.textContent = 'Invalid message length.';
-              else if (reason === 'rate_limit') error.textContent = 'This device already sent a message. Try again later.';
-              else if (reason === 'limit') error.textContent = 'Daily limit reached. Try again later.';
-              else if (reason === 'site_not_found') error.textContent = 'Site not found. Re-publish the site.';
-              else if (reason === 'spam') error.textContent = 'Message blocked by anti-spam.';
-              else error.textContent = 'Error. Try again later.';
+              if (reason === 'invalid_email') error.textContent = 'Неверный формат email.';
+              else if (reason === 'invalid_name') error.textContent = 'Неверное имя.';
+              else if (reason === 'invalid_message' || reason === 'invalid_content') error.textContent = 'Неверная длина сообщения.';
+              else if (reason === 'rate_limit') error.textContent = 'Это устройство уже отправляло сообщение. Попробуйте позже.';
+              else if (reason === 'limit') error.textContent = 'Дневной лимит исчерпан. Попробуйте позже.';
+              else if (reason === 'site_not_found') error.textContent = 'Сайт не найден. Опубликуйте его заново.';
+              else if (reason === 'spam') error.textContent = 'Сообщение заблокировано антиспамом.';
+              else error.textContent = 'Ошибка. Попробуйте позже.';
             }
             throw new Error('send_failed');
           }
@@ -274,7 +303,7 @@ a.button-link {
           expectedCaptcha = a + b;
           if (captchaLabel) captchaLabel.textContent = (form.dataset.lang === 'ru' ? 'Проверка: ' : 'Check: ') + a + ' + ' + b + ' = ?';
         } catch (e) {
-          if (error && (!error.textContent || error.textContent === 'Error. Try again later.')) error.textContent = 'Message limit reached. Try again later.';
+          if (error && (!error.textContent || error.textContent === 'Ошибка. Попробуйте позже.')) error.textContent = 'Лимит сообщений достигнут. Попробуйте позже.';
           if (error) error.hidden = false;
         } finally {
           if (submitBtn) { submitBtn.classList.remove('is-loading'); validateLive(); }
